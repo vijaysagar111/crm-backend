@@ -21,12 +21,7 @@ const authRouter = require('./routes/auth.route')
 const userRouter = require('./routes/user.route')
 
 // Dev Logginf Middleware
-if (process.env.NODE_ENV === 'development') {
-    app.use(cors({
-        origin: process.env.CLIENT_URL
-    }))
-    app.use(morgan('dev'))
-}
+
 app.use(cors());
 // Use Routes
 app.use('/api', authRouter)
